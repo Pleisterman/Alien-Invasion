@@ -57,7 +57,7 @@ only one level can be played,
  because the transition to the next level is not implemented.
 It has become quite a complex project and I am setting out to simplify the project in this new version.
 
-At this moment 03-08-2018 the initial project setup is created.
+At this moment 08-march-2018 the initial project setup is created.
 Please be patient in the comming days the rest of the code will be uploaded.
 
 greetings. 

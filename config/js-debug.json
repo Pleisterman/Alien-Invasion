@@ -1,0 +1,8 @@
+{
+    "on" :          true,
+    "zIndex" :     8000,                     
+    "top" :         210,                      
+    "left" :        10,                        
+    "width" :       550,                     
+    "height" :      270                       
+}

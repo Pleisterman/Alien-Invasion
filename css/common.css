@@ -1,0 +1,15 @@
+/*
+        @package    crossRacer
+ 
+        file:       \css\common\common.css
+*/
+
+body {
+    font-family: roboto;
+    font-size: 1.0em
+}
+
+a {
+    color: green;
+}
+

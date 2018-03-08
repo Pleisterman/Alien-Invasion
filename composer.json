@@ -1,0 +1,21 @@
+{
+    "name": "pleisterman/Alien-Invasion",
+    "description": "Alien-Invasion is a game inspired by Space Invaders.",
+    "license": "gpl",
+    "authors": [
+        {
+            "name": "Pleisterman",
+            "email": "info@pleisterman.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "config": {
+        "optimize-autoloader": true
+    },
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PleistermanAlienInvaders\\" :  "./php"  
+        }    
+    }
+}

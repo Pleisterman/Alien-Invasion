@@ -32,6 +32,30 @@ use PleistermanAlienInvaders\Common\Common;
 use PleistermanAlienInvaders\Common\DeviceDetector;
 use PleistermanAlienInvaders\Index\JsConfig;
 use PleistermanAlienInvaders\Language\Translator;
+       
+// application files
+$applicationFiles = array(
+    './js/index/main.js',
+    './js/index/contentModule.js',
+    './js/index/headerModule.js',
+    './js/index/layoutModule.js',
+    './js/index/valuesModule.js',
+    './js/game/gameModule.js',
+    './js/game/gameEventsModule.js',
+    './js/game/assetsLoaderModule.js',
+    './js/game/audioModule.js',
+    './js/game/commonAssetsModule.js',
+    './js/game/scenes/common/gameAudioButtonModule.js',
+    './js/game/scenes/splashScreen/splashScreenModule.js',
+    './js/game/scenes/splashScreen/splashScreenAudioModule.js',
+    './js/game/scenes/gameMenu/gameMenuModule.js',
+    './js/game/scenes/gameMenu/gameMenuAudioModule.js',
+    './js/game/scenes/gameMenu/gameMenuBackgroundModule.js',
+    './js/game/scenes/gameMenu/gameMenuContentModule.js',
+    './js/game/scenes/gameMenu/gameMenuButtonsModule.js',
+    './js/game/scenes/gameMenu/gameMenuForegroundModule.js'
+);
+// application files
 
 // css files
 $cssFiles = array(
@@ -79,12 +103,6 @@ $jsProjectFiles = array(
     './js/jsProject/functions/stringToRgbFunction.js'
 );
 // jsProject files
-        
-// application files
-$applicationFiles = array(
-    './js/index/main.js',
-);
-// application files
 
 // create version
 $version = '001';
@@ -101,6 +119,17 @@ $common->log( 'Start', E_ERROR );
 // create device detector
 $deviceDetector = new DeviceDetector( $common );
 
+
+// create is mobile
+$isMobile = 'false';
+
+// get is mobile
+if( $deviceDetector->isMobile() ){
+    // get is mobile
+    $isMobile = 'true';
+} 
+// get is mobile
+
 // create js config
 $jsConfig = new JsConfig( $common );
 
@@ -109,7 +138,7 @@ $translator = new Translator( $common );
 // get languages
 $languages = $translator->getLanguages();
 // get defaut language
-$defaultLanguage = $common->getSetting( 'default-language' );
+$defaultLanguage = $common->getSetting( 'defaultLanguage' );
 // get transaltions
 $translations = $translator->getTranslations( $defaultLanguage );
 
@@ -121,16 +150,16 @@ $translations = $translator->getTranslations( $defaultLanguage );
 
     <head>
         <?php // set title ?>
-        <title><?php echo $translations['document-title'];?></title>
+        <title><?php echo $translations['documentTitle'];?></title>
         
         <?php // set charset ?>
         <meta charset="UTF-8">
         
         <?php // set desciption ?>
-        <meta name="description" content="<?php echo $translations['document-description'];?>">
+        <meta name="description" content="<?php echo $translations['documentDescription'];?>">
         
         <?php // set keywords ?>
-        <meta name="keywords" content="<?php echo $translations['document-keywords'];?>">
+        <meta name="keywords" content="<?php echo $translations['documentKeywords'];?>">
         
         <?php // set viewport ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -165,12 +194,8 @@ $translations = $translator->getTranslations( $defaultLanguage );
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>   
         
         <?php // add phaser ?>
-        <script type="text/javascript" src="./js/phaser.min.js?version=<?php echo $version; ?>" ></script>
+        <script type="text/javascript" src="./js/phaser.js?version=<?php echo $version; ?>" ></script>
             
-        <?php // add proTracker ?>
-        <script type="text/javascript" src="./js/proTracker.js?version=<?php echo $version; ?>" ></script>
-
-
         <?php 
         // add jsProject files 
         
@@ -220,7 +245,7 @@ $translations = $translator->getTranslations( $defaultLanguage );
     echo '<noscript>';
 
             // add js not activatited response
-            echo $translations['document-no-js'];
+            echo $translations['documentNoJs'];
             
     // close no script tag
     echo '</noscript>';
@@ -240,7 +265,14 @@ echo 'alienInvasion.debug=' . $jsConfig->getDebugConfig() . ';' . PHP_EOL;
 echo 'alienInvasion.languages=' . json_encode( $languages ) . ';' . PHP_EOL; 
 
 // add language
-echo 'alienInvasion.language="' . $defaultLanguage . '";'; 
+echo 'alienInvasion.language="' . $defaultLanguage . '";' . PHP_EOL;
+
+// add translations
+echo 'alienInvasion.translations=' . json_encode( $translations ) . ';' . PHP_EOL;
+
+// add is mobile
+echo 'alienInvasion.isMobile=' . $isMobile . ';' . PHP_EOL;
+
 
 ?>
     

@@ -1,6 +1,6 @@
 {
     "on" :              true,
-    "php-debug-on" :    true,
+    "phpDebugOn" :      true,
     "level" :           "E_ALL",
-    "php-level" :       "E_ALL"
+    "phpLevel" :        "E_ALL"
 }

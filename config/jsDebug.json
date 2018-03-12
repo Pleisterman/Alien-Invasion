@@ -1,6 +1,6 @@
 {
-    "on" :          true,
-    "zIndex" :     8000,                     
+    "on" :          false,
+    "zIndex" :      8000,                     
     "top" :         210,                      
     "left" :        10,                        
     "width" :       550,                     

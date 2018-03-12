@@ -26,14 +26,14 @@ class Debugger {
     // members
     private $fileExtenstion = 'log';
     private $configDir = '/../../config/';
-    private $configFileName = 'php-debug.json';
+    private $configFileName = 'phpDebug.json';
     private $debugDir = '/../../debug/';
     private $config = array( 
-                'on' =>                false,
-                'level' =>             E_ALL,
-                'php-debug-on' =>      false,
-                'php-level' =>         E_ALL,
-                'subject' =>           'default' 
+                'on' =>             false,
+                'level' =>          E_ALL,
+                'phpDebugOn' =>     false,
+                'phpLevel' =>       E_ALL,
+                'subject' =>        'default' 
             );
     // members
 
@@ -137,9 +137,9 @@ class Debugger {
         $this->config['subject'] = $subject ? $subject : $this->config['subject'];
         
         // set error reporting of apache server 
-        if( $this->config['php-debug-on'] ) {
+        if( $this->config['phpDebugOn'] ) {
             
-            $level = constant( $this->config['php-level'] );
+            $level = constant( $this->config['phpLevel'] );
             
             // set ini
             ini_set( 'display_errors', $level );

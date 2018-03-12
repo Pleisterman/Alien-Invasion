@@ -1,6 +1,10 @@
 {
-    "document-title" :          "Pleisterman Alien-Invasion",
-    "document-description" :    "Alien Invasion is a game inspired by Space Invaders. It was created with Phaser2.",
-    "document-keywords" :       "Pleisterman, Phaser, Experiments",
-    "document-no-js" :          "You have Javascript disabled.<br><br>This page needs Javascript to work properly.<br> please enable Javascript and reload the page."
+    "documentTitle" :               "Alien-Invasion",
+    "documentDescription" :         "Alien Invasion is a game inspired by Space Invaders. It was created with Phaser2.",
+    "documentKeywords" :            "Project, Phaser, Bootstrap, Responsive",
+    "documentNoJs" :                "You have Javascript disabled.<br><br>This page needs Javascript to work properly.<br> please enable Javascript and reload the page.",
+    "options" :                     "Options",
+    "highScores" :                  "Highscores",
+    "about" :                       "About",
+    "changeOrientationMessage" :    "Turn the screen to diplay the menu."
 }

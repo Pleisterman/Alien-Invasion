@@ -20,8 +20,8 @@ class JsConfig extends CommonBaseClass {
     
     // members
     private $configDir = '/../../config/';
-    private $configFileName = 'js-config.json';
-    private $debugConfigFileName = 'js-debug.json';
+    private $configFileName = 'jsConfig.json';
+    private $debugConfigFileName = 'jsDebug.json';
     // members
 
     // public

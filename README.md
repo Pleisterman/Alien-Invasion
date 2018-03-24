@@ -64,8 +64,30 @@ greetings.
 
 Rob Wolters
 
+24-03-2018
 
+Currently implemented:
 
+Splashscreen,
+Game menu:
+    Options:        change music and effects volume
+    highscores:     display high scores
+    About:          display about info
+
+PHP debugger,
+Javascript debugger,
+Transaltions,
+config:             
+                    music on /off / volume
+                    effects on /off / volume
+                    show splashscreen
+                    php debug on / off /level
+                    javascript debug on / off / screen position and size    
+                    font and size
+Responsive,
+Full screen,
+Mobile ready,
+Sound on / off
 
  
 

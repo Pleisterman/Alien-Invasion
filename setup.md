@@ -33,7 +33,11 @@ change translations:
 
 \config\translations\..
 
-Change in all javascript files in the directory: \js\game
+Change in all javascript files in the directory: \js\game and js\index
+
+alienInvasion to package name
+
+Change in index.php
 
 alienInvasion to package name
 

@@ -3,10 +3,10 @@
  * 
  *  File: \js\game\scenes\gameMenu\gameMenuBackgroundModule.js
  * 
- *  Last Revision:  08-03-2018
+ *  Last Revision:  24-03-2018
  * 
  *  Purpose:  
- *      draws the background for the game state gameMenu
+ *      draws the background for the scene gameMenu
  * 
  * 
 */
@@ -115,10 +115,13 @@
             // remove event subscriptions
             self.removeEventSubscriptions();
             
-            // destroy sprite image
-            alienInvasion.destroyAsset( self.backgroundImage ); 
+            // destroy phaserobject
+            self.backgroundImage['phaserObject'].destroy();
             // unset phaserobject
             self.backgroundImage['phaserObject'] = null;
+            
+            // destroy sprite image
+            alienInvasion.destroyAsset( self.backgroundImage ); 
             
         // DONE FUNCTION: destruct( void ) void
         };

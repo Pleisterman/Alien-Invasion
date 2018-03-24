@@ -1,0 +1,14 @@
+{
+    "id"                    :   "003mars",
+    "title"                 :   "Mars.",
+    "subTitle"              :   "Explore the neighbourhood.",
+    "description"           :   [ 
+        "Start your journey into our academy,",
+        "to explore new worlds."
+    ],
+    "background"            :   "missionBackground.jpg",
+    "useMissionImages"      :   [
+        "background"
+    ],
+    "lives"                 :   4
+}

@@ -1,10 +1,18 @@
 {
-    "documentTitle" :               "Alien-Invasion",
-    "documentDescription" :         "Alien Invasion is een spel geinspireerd door Space Invaders. Het is gemaakt met Phaser2",
-    "documentKeywords" :            "Project, Phaser, Bootstrap, Responsive",
-    "documentNoJs" :                "U heeft Javascript uitgeschakeld.<br>Deze pagina heeft Javascript nodig om goed te werken.<br> Zet u alstublieft Javascript aan en herlaad de pagina.",
-    "options" :                     "Opties",
-    "highScores" :                  "Highscores",
-    "about" :                       "About",
-    "changeOrientationMessage" :    "Draai het scherm om het menu weer te geven."
+    "documentTitle" :                       "Alien-Invasion",
+    "documentDescription" :                 "Alien Invasion is een spel geinspireerd door Space Invaders. Het is gemaakt met Phaser2",
+    "documentKeywords" :                    "Project, Phaser, Bootstrap, Responsive",
+    "documentNoJs" :                        "U heeft Javascript uitgeschakeld.<br>Deze pagina heeft Javascript nodig om goed te werken.<br> Zet u alstublieft Javascript aan en herlaad de pagina.",
+    "options" :                             "Opties",
+    "highScores" :                          "Highscores",
+    "about" :                               "About",
+    "changeOrientationMessageMenu" :        "Draai het scherm om het menu weer te geven.",
+    "changeOrientationMessageOptions" :     "Draai het scherm om de opties weer te geven.",
+    "changeOrientationMessageAbout" :       "Draai het scherm om \nde About weer te geven.",
+    "changeOrientationMessageHighScores" :  "Draai het scherm om \nde High Scores weer te geven.",
+    "mission" :                             "Missie",
+    "level" :                               "Level",
+    "volume" :                              "Volume",
+    "music" :                               "Muziek",
+    "effects" :                             "Effecten"
 }

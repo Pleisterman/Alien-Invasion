@@ -3,7 +3,7 @@
  * 
  *  File: \js\game\scenes\gameMenu\gameMenuModule.js
  * 
- *  Last Revision:  10-03-2018
+ *  Last Revision:  24-03-2018
  * 
  * 
  *  Purpose:  
@@ -24,7 +24,7 @@
         self.MODULE = 'gameMenuModule';                                 // string
         self.debugOn = true;                                            // boolean
         self.game = null;                                               // Phaser.Game
-        self.gameStateId = 'gameMenu';                                  // string: gameStateId
+        self.sceneId = 'gameMenu';                                      // string
         self.audio = null;                                              // module
         self.modules = [                                                // json: modules
             {                                                           // json: gameMenuBackground
@@ -42,6 +42,11 @@
                 'MODULE'        :   alienInvasion.gameMenuForegroundModule,
                 'moduleObject'  :   null
             },                                                          // done json: gameMenuForeground
+            {                                                           // json: fullScreenButton
+                'id'            :   'fullScreenButton',                  
+                'MODULE'        :   alienInvasion.fullScreenButtonModule,
+                'moduleObject'  :   null
+            },                                                           // done json: fullScreenButton
             {                                                           // json: gameAudioButton
                 'id'            :   'gameAudioButton',                  
                 'MODULE'        :   alienInvasion.gameAudioButtonModule,
@@ -65,22 +70,22 @@
         self.addEventSubscriptions = function(){
         // FUNCTION: addEventSubscriptions( void ) void
             
-            // subscribe to layoutChange
-            jsProject.subscribeToEvent( 'addGameStates', self.addGameState );
+            // subscribe to add scenes
+            jsProject.subscribeToEvent( 'addScenes', self.addScene );
             
         // DONE FUNCTION: addEventSubscriptions( void ) void
         };
-        self.addGameState = function( game ){
-        // FUNCTION: addGameState( Phaser.game: game ) void
+        self.addScene = function( game ){
+        // FUNCTION: addScene( Phaser.game: game ) void
             
             // debug info
-            self.debug( 'addGameState' );
+            self.debug( 'addScene' );
             
             // remember game
             self.game = game;
 
-            // add state to game
-            self.game.state.add( self.gameStateId, self );
+            // add scene to game
+            self.game.state.add( self.sceneId, self );
             
             // create audio module
             self.audio = new alienInvasion.gameMenuAudioModule( self.game );
@@ -95,7 +100,7 @@
             // done loop over modules
                         
             
-        // DONE FUNCTION: addGameState( Phaser.game: game ) void
+        // DONE FUNCTION: addScene( Phaser.game: game ) void
         };
         self.preload = function(  ){
         // FUNCTION: preload( void ) void

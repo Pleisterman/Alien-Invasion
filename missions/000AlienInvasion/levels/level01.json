@@ -1,0 +1,8 @@
+{
+    "id"                    :   "level01",
+    "title"                 :   "Your second assignment.",
+    "description"           :   [ 
+        "Welcome back to our academy.",
+        "We where waiting for you."
+    ]
+}

@@ -1,10 +1,18 @@
 {
-    "documentTitle" :               "Alien-Invasion",
-    "documentDescription" :         "Alien Invasion is a game inspired by Space Invaders. It was created with Phaser2.",
-    "documentKeywords" :            "Project, Phaser, Bootstrap, Responsive",
-    "documentNoJs" :                "You have Javascript disabled.<br><br>This page needs Javascript to work properly.<br> please enable Javascript and reload the page.",
-    "options" :                     "Options",
-    "highScores" :                  "Highscores",
-    "about" :                       "About",
-    "changeOrientationMessage" :    "Turn the screen to diplay the menu."
+    "documentTitle" :                       "Alien-Invasion",
+    "documentDescription" :                 "Alien Invasion is a game inspired by Space Invaders. It was created with Phaser2.",
+    "documentKeywords" :                    "Project, Phaser, Bootstrap, Responsive",
+    "documentNoJs" :                        "You have Javascript disabled.<br><br>This page needs Javascript to work properly.<br> please enable Javascript and reload the page.",
+    "options" :                             "Options",
+    "highScores" :                          "Highscores",
+    "about" :                               "About",
+    "changeOrientationMessageMenu" :        "Turn the screen to diplay the menu.",
+    "changeOrientationMessageOptions" :     "Turn the screen to diplay the options.",
+    "changeOrientationMessageAbout" :       "Turn the screen \nto diplay the about.",
+    "changeOrientationMessageHighScores" :  "Turn the screen \nto diplay the High Scores.",
+    "mission" :                             "Mission",
+    "level" :                               "Level",
+    "volume" :                              "Volume",
+    "music" :                               "Music",
+    "effects" :                             "Effects"
 }

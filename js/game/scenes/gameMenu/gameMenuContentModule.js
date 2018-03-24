@@ -6,7 +6,7 @@
  *  Last Revision:  10-03-2018
  *  
  *  Purpose:  
- *      creates the content for the game state gameMenu
+ *      creates the content for the scene gameMenu
  * 
  * 
 */

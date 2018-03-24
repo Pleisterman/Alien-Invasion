@@ -25,13 +25,27 @@
         self.game = game;                                               // Phaser.game: game
         self.imageUrl = alienInvasion.config['imageUrl'];               // string: image dir
         self.commonAssets = [                                           // json: commonAssets                                       
+            {                                                           // json: fullScreenButton
+                "assetId"           :   "fullScreenButton", 
+                "type"              :   "spritesheet",
+                "fileName"          :   self.imageUrl + "fullScreenButton.png",
+                "imageWidth"        :   80,
+                "imageHeight"       :   80
+            },                                                           // done json: fullScreenButton
             {                                                           // json: gameAudioButton
                 "assetId"           :   "gameAudioButton", 
                 "type"              :   "spritesheet",
                 "fileName"          :   self.imageUrl + "gameAudioButton.png",
                 "imageWidth"        :   80,
                 "imageHeight"       :   80
-            }                                                           // done json: gameAudioButton
+            },                                                           // done json: gameAudioButton
+            {                                                            // json: backToMenuButton
+                "assetId"           :   "backToMenuButton", 
+                "type"              :   "spritesheet",
+                "fileName"          :   self.imageUrl + "backToMenuButton.png",
+                "imageWidth"        :   80,
+                "imageHeight"       :   80
+            }                                                           // done json: backToMenuButton
         ];                                                              // done json: commonAssets                    
         // DONE MEMBERS
         

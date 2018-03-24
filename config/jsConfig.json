@@ -24,13 +24,15 @@
     "imageUrl" :                                    "./assets/images/",
     "audioUrl" :                                    "./assets/audio/",
     "audioOn" :                                     true,     
-    "musicOn" :                                     false,
-    "musicVolume" :                                 0.3,     
+    "musicOn" :                                     true,
+    "musicVolume" :                                 0.05,     
     "audioEffectsOn" :                              true,
-    "audioEffectsVolume" :                          0.3,     
-    "splashscreenShow" :                            false,
+    "audioEffectsVolume" :                          0.1,     
+    "splashscreenShow" :                            true,
     "splashscreenOpenTransitionPeriod" :            2000,
     "splashscreenShowPeriod" :                      4000,
     "splashscreenCloseTransitionPeriod" :           2000,
-    "sceneShowTransitionPeriod" :                   2000
+    "sceneShowTransitionPeriod" :                   2000,
+    "listScrollAnimationSpeed" :                    -0.4,
+    "verticalScrollDistance" :                      25    
 }

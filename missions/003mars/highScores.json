@@ -1,0 +1,20 @@
+[
+{
+    "name"                  :   "Test_Mars",
+    "difficulty"            :   2,
+    "level"                 :   4,
+    "score"                 :   5000
+},
+{
+    "name"                  :   "Hans",
+    "difficulty"            :   0,
+    "level"                 :   4,
+    "score"                 :   2800
+},
+{
+    "name"                  :   "Bor",
+    "difficulty"            :   0,
+    "level"                 :   4,
+    "score"                 :   2600
+}
+]

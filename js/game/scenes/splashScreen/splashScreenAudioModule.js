@@ -83,35 +83,25 @@
             // debug info
             self.debug( 'play music: ' + self.currentMusic['id'] );
             
+            // remove on complete
+            self.currentMusic['phaserObject'].onStop.add( self.musicStopped, self );
+
             // play random music
             jsProject.callEvent( 'playMusic', self.currentMusic );
             
         // DONE FUNCTION: create( void ) void
         };
-            self.musicStopped = function(  ){
-            // FUNCTION: musicStopped( void ) void
+        self.musicStopped = function(  ){
+        // FUNCTION: musicStopped( void ) void
 
-                // debug info
-                self.debug( 'musicStopped' );
+            // debug info
+            self.debug( 'musicStopped' );
 
-                // remove on complete
-                self.currentMusic['phaserObject'].onStop.remove( self.musicStopped, self );
+            // play music
+            jsProject.callEvent( 'playMusic', self.currentMusic );
 
-                // create random selection
-                var randomSelection = parseInt( Math.random() * self.music.length );
-                // select random music
-                self.currentMusic = self.music[randomSelection];
-                // debug info
-                self.debug( 'play music: ' + self.music[randomSelection]['id'] );
-
-                // add on complete
-                self.currentMusic['phaserObject'].onStop.add( self.musicStopped, self );
-
-                // play random music
-                jsProject.callEvent( 'playMusic', self.currentMusic );
-
-            // DONE FUNCTION: musicStopped( void ) void
-            };
+        // DONE FUNCTION: musicStopped( void ) void
+        };
         self.update = function(  ){
         // FUNCTION: update( void ) void
 

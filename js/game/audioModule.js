@@ -25,6 +25,7 @@
         self.debugOn = true;                                    // boolean
         self.game = game;                                       // Phaser.game
         self.audio = {};                                        // json
+        self.currentMusic = null;                               // p
         // DONE MEMBERS
         
         // FUNCTIONS
@@ -85,6 +86,9 @@
 
             // subscribe to playAudioEffect
             jsProject.subscribeToEvent( 'playAudioEffect', self.playAudioEffect );
+
+            // subscribe to musicVolumeChanged
+            jsProject.subscribeToEvent( 'musicVolumeChanged', self.musicVolumeChanged );
 
             // subscribe to freeAudio
             jsProject.subscribeToEvent( 'freeAudio', self.freeAudio );
@@ -151,12 +155,28 @@
             // done ! audio found
 
             // play audio object
-            options['phaserObject'].volume = ( alienInvasion.config['musicVolume'] / 100 ) * options['volumePercentage'];
+            options['phaserObject'].volume = ( jsProject.getValue( 'volume', 'music' ) / 100 ) * options['volumePercentage'];
+            // debug info
+            self.debug( 'playMusic volume: ' + ( jsProject.getValue( 'volume', 'music' ) / 100 ) * options['volumePercentage'] );
+            
             // play audio object
             options['phaserObject'].play();
-            
+            // set current music
+            self.currentMusic = options;
             
         // DONE FUNCTION: playMusic( json: options ) void
+        };
+        self.musicVolumeChanged = function( ){
+        // FUNCTION: musicVolumeChanged( void ) void
+             
+             // current music exists
+             if( self.currentMusic ){
+                 // set volume
+                 self.currentMusic['phaserObject'].volume = ( jsProject.getValue( 'volume', 'music' ) / 100 ) * self.currentMusic['volumePercentage'];
+             }
+             // current music exists
+             
+        // DONE FUNCTION: musicVolumeChanged( void ) void
         };
         self.playAudioEffect = function( options ){
         // FUNCTION: playAudioEffect( json: options ) void
@@ -178,7 +198,7 @@
             // done ! audio found
 
             // play audio object
-            options['phaserObject'].volume = ( alienInvasion.config['audioEffectsVolume'] / 100 ) * options['volumePercentage'];
+            options['phaserObject'].volume = ( jsProject.getValue( 'volume', 'audioEffects' ) / 100 ) * options['volumePercentage'];
             // play audio object
             options['phaserObject'].play();
             

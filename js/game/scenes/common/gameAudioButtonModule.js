@@ -1,7 +1,7 @@
 /* 
  *  Package: Pleisterman\Alien-Invasion 
  * 
- *  File: \js\game\scenes\gameMenu\gameAudioButtonModule.js
+ *  File: \js\game\scenes\common\gameAudioButtonModule.js
  * 
  *  Last Revision:  11-03-2018
  * 
@@ -32,12 +32,16 @@
             'phaserObject'          :   null,                           // Phaser.Sprite
             'width'                 :   60,                             // integer: percentage of screen width                                                 
             'height'                :   60,                             // integer: px
-            'marginTop'             :   65,                             // integer: px
+            'mobileWidth'           :   30,                             // integer: px                                      
+            'mobileHeight'          :   30,                             // integer: px
+            'marginTop'             :   135,                            // integer: px
             'marginRight'           :   25,                             // integer: px
+            'mobileMarginTop'       :   85,                             // integer: px
+            'mobileMarginRight'     :   5,                              // integer: px
             'mouseIsOver'           :   false,                          // boolean
         };                                                              // done json: buttonOptions
         self.mouseOverAudioEffectId = 'gameButtonOver';                 // string
-        self.selectAudioEffectId = 'menuButtonSelect';                  // string
+        self.selectAudioEffectId = 'gameButtonSelect';                  // string
         // DONE MEMBERS
         
         // FUNCTIONS
@@ -109,10 +113,24 @@
             // add event handler
             self.buttonOptions['phaserObject'].events.onInputDown.add( function( ){ self.click( ); });
                 
-            // set button width
-            self.buttonOptions['phaserObject'].width = self.buttonOptions['width'];
-            // set button height
-            self.buttonOptions['phaserObject'].height = self.buttonOptions['height'];
+             // is mobile
+            if( alienInvasion.isMobile ){
+                
+                // set button width
+                self.buttonOptions['phaserObject'].width = self.buttonOptions['mobileWidth'];
+                // set button height
+                self.buttonOptions['phaserObject'].height = self.buttonOptions['mobileHeight'];
+
+            }
+            else {
+                
+                // set button width
+                self.buttonOptions['phaserObject'].width = self.buttonOptions['width'];
+                // set button height
+                self.buttonOptions['phaserObject'].height = self.buttonOptions['height'];
+
+            }
+            // is mobile
             
             // set alpha
             self.buttonOptions['phaserObject'].alpha = 0;
@@ -213,10 +231,20 @@
         self.layoutChange = function( ) {
         // FUNCTION: layoutChange( void ) void
            
-            // set left
-            self.buttonOptions['phaserObject'].x = self.game.world.width - ( self.buttonOptions['marginRight'] + self.buttonOptions['width'] );
-            // set top
-            self.buttonOptions['phaserObject'].y = self.buttonOptions['marginTop']; 
+            // is mobile
+            if( alienInvasion.isMobile ){
+                // set left
+                self.buttonOptions['phaserObject'].x = self.game.world.width - ( self.buttonOptions['mobileMarginRight'] + self.buttonOptions['mobileWidth'] );
+                // set top
+                self.buttonOptions['phaserObject'].y = self.buttonOptions['mobileMarginTop']; 
+            }
+            else {
+                // set left
+                self.buttonOptions['phaserObject'].x = self.game.world.width - ( self.buttonOptions['marginRight'] + self.buttonOptions['width'] );
+                // set top
+                self.buttonOptions['phaserObject'].y = self.buttonOptions['marginTop']; 
+            }
+            // is mobile
                         
         // DONE FUNCTION: layoutChange( void ) void
         };

@@ -6,7 +6,7 @@
  *  Last Revision:  10-03-2018
  *  
  *  Purpose:  
- *      handles the audio for the game state gameMenu
+ *      handles the audio for the scene gameMenu
  * 
  * 
 */
@@ -32,7 +32,7 @@
                                         self.audioUrl + 'background01.ogg',
                                         self.audioUrl + 'background01.mp3'
                 ],
-                'volumePercentage' :    60,
+                'volumePercentage' :    5,
                 'phaserObject' :        null     
             },                                                          
             {                                                           
@@ -41,7 +41,7 @@
                                         self.audioUrl + 'background02.ogg',
                                         self.audioUrl + 'background02.mp3'
                 ],
-                'volumePercentage' :    40,
+                'volumePercentage' :    5,
                 'phaserObject' :        null     
             },                                                          
             {                                                           
@@ -50,7 +50,7 @@
                                         self.audioUrl + 'background03.ogg',
                                         self.audioUrl + 'background03.mp3'
                 ],
-                'volumePercentage' :    60,
+                'volumePercentage' :    5,
                 'phaserObject' :        null     
             }                                                           
         ];                                                              // done json: music    
@@ -65,10 +65,19 @@
                 'phaserObject' :        null     
             },    
             {                                                           
-                'id' :                  'menuButtonOver',
+                'id' :                  'gameButtonSelect',
                 'fileNames'     :   [
                                         self.audioUrl + 'menuButtonOver.ogg',
                                         self.audioUrl + 'menuButtonOver.mp3'
+                ],
+                'volumePercentage' :    10,
+                'phaserObject' :        null     
+            },    
+            {                                                           
+                'id' :                  'menuButtonOver',
+                'fileNames'     :   [
+                                        self.audioUrl + 'gameButtonOver.ogg',
+                                        self.audioUrl + 'gameButtonOver.mp3'
                 ],
                 'volumePercentage' :    10,
                 'phaserObject' :        null     
@@ -292,8 +301,27 @@
                 // phaser object exists
                 
             }
-            // done loop over music
+            // done loop over music                
                 
+            // loop over effects
+            for( var i = 0; i < self.effects.length; i++ ){
+                
+                // phaser object exists
+                if( self.effects[i]['phaserObject'] ){
+                
+                    // destroy phaser Object
+                    self.effects[i]['phaserObject'].destroy();
+                    // reset phaser Object
+                    self.effects[i]['phaserObject'] = null;
+                }          
+                // phaser object exists
+                
+                // preload effects
+                jsProject.callEvent( 'freeAudio', self.effects[i] );
+                
+            }
+            // done loop over effects
+            
         // DONE FUNCTION: destruct( void ) void
         };
         self.debug = function( message ) {

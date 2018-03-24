@@ -6,7 +6,7 @@
  *  Last Revision:  08-03-2018
  *  
  *  Purpose:  
- *      draws the background for the game state gameMenu
+ *      draws the background for the scene gameMenu
  * 
  * 
 */
@@ -31,6 +31,7 @@
                 'assetId'           :   'topBar',                       // string
                 'type'              :   'image',                        // string
                 'height'            :   90,                             // integer
+                'mobileHeight'      :   60,                             // integer: px
                 'fileName'          :   self.imageUrl + 'gameMenuTopBar.png', // string
                 'phaserObject'      :   null                            // Phaser:sprite
             },                                                          // done json: topBarOptions
@@ -38,6 +39,7 @@
                 'assetId'           :   'leftSideBar',                  // string
                 'type'              :   'image',                        // string
                 'width'             :   40,                            // integer
+                'mobileWidth'       :   10,                             // integer: px
                 'fileName'          :   self.imageUrl + 'gameLeftBar.png', // string
                 'phaserObject'      :   null                            // Phaser:sprite
             },                                                          // done json: leftSideBarOptions
@@ -45,6 +47,7 @@
                 'assetId'           :   'rightSideBar',                 // string
                 'type'              :   'image',                        // string
                 'width'             :   40,                            // integer
+                'mobileWidth'       :   10,                             // integer: px
                 'fileName'          :   self.imageUrl + 'gameRightBar.png', // string
                 'phaserObject'      :   null                            // Phaser:sprite
             },                                                          // done json: rightSideBarOptions
@@ -52,6 +55,7 @@
                 'assetId'           :   'bottomBar',                    // string
                 'type'              :   'image',                        // string
                 'height'            :   52,                             // integer
+                'mobileHeight'      :   10,                             // integer: px
                 'fileName'          :   self.imageUrl + 'gameBottomBar.png', // string
                 'phaserObject'      :   null                            // Phaser:sprite
             }                                                           // done json: bottomBarOptions
@@ -131,7 +135,84 @@
         };
         self.layoutChange = function( ) {
         // FUNCTION: layoutChange( void ) void
+        
+            // is mobile
+            if( alienInvasion.isMobile ){
+                // show mobile
+                self.showMobile();
+            }
+            else {
+                // show
+                self.show();
+            }
+            // is mobile
+            
+        // DONE FUNCTION: layoutChange( void ) void
+        };
+        self.showMobile = function( ) {
+        // FUNCTION: showMobile( void ) void
+        
+            // create vars
+            var width = 0, top = 0, left = 0;
+            
+            // get json object
+            var leftSideBar = jsProject.getJsonValue( self.sprites, ['assetId=leftSideBar'] );     
+            // set left bar width
+            leftSideBar['phaserObject'].width = leftSideBar['mobileWidth'];
+            // set left bar height
+            leftSideBar['phaserObject'].height = self.game.world.height;
+            
+            // get json object
+            var rightSideBar = jsProject.getJsonValue( self.sprites, ['assetId=rightSideBar'] );     
+            // set right bar width
+            rightSideBar['phaserObject'].width = rightSideBar['mobileWidth'];
+            // set left bar height
+            rightSideBar['phaserObject'].height = self.game.world.height;
+            
+            // calculate right side bar left
+            left = self.game.world.width;
+            // subtract right side bar width
+            left -= rightSideBar['mobileWidth'];
+            // set right bar left
+            rightSideBar['phaserObject'].x = left;
 
+            // calculate width
+            var width = self.game.world.width;
+            // subtract left side bar
+            width -= leftSideBar['mobileWidth'];
+            // subtract right side bar
+            width -= rightSideBar['mobileWidth'];
+            
+            // get json object
+            var topBar = jsProject.getJsonValue( self.sprites, ['assetId=topBar'] );     
+            // set top bar width
+            topBar['phaserObject'].width = width;
+            // set top bar height
+            topBar['phaserObject'].height = topBar['mobileHeight'];
+            // set top bar left
+            topBar['phaserObject'].x = leftSideBar['mobileWidth'];
+
+            // get json object
+            var bottomBar = jsProject.getJsonValue( self.sprites, ['assetId=bottomBar'] );     
+            // calculate bottom bar top
+            top = self.game.world.height;
+            // subtract left side bar
+            top -= bottomBar['mobileHeight'];
+            
+            // set bottom bar width
+            bottomBar['phaserObject'].width = width;
+            // set bottom bar height
+            bottomBar['phaserObject'].height = bottomBar['mobileHeight'];
+            // set bottom bar left
+            bottomBar['phaserObject'].x = leftSideBar['mobileWidth'];
+            // set bottom bar top
+            bottomBar['phaserObject'].y = top;
+                         
+        // DONE FUNCTION: showMobile( void ) void
+        };
+        self.show = function( ) {
+        // FUNCTION: show( void ) void
+        
             // create vars
             var width = 0, top = 0, left = 0;
             
@@ -187,8 +268,8 @@
             bottomBar['phaserObject'].x = leftSideBar['width'];
             // set bottom bar top
             bottomBar['phaserObject'].y = top;
-                                      
-        // DONE FUNCTION: layoutChange( void ) void
+                         
+        // DONE FUNCTION: show( void ) void
         };
         self.destruct = function(  ){
         // FUNCTION: destruct( void ) void
@@ -201,10 +282,12 @@
             
             // loop over sprites
             for( var i = 0; i < self.sprites.length; i++ ){
-                // destroy sprite image
-                alienInvasion.destroyAsset( self.sprites[i] ); 
+                // destroy phaserobject
+                self.sprites[i]['phaserObject'].destroy();
                 // unset phaserobject
                 self.sprites[i]['phaserObject'] = null;
+                // destroy sprite image
+                alienInvasion.destroyAsset( self.sprites[i] ); 
             }
             // done loop over sprites
             

@@ -23,8 +23,8 @@
         self.MODULE = 'splashScreenModule';                             // string
         self.debugOn = true;                                            // boolean
         self.game = null;                                               // Phaser.Game
-        self.gameStateId = 'splashScreen';                              // string: gameStateId
-        self.nextGameStateId = 'gameMenu';                              // string: nextGameStateId
+        self.sceneId = 'splashScreen';                                  // string
+        self.nextSceneId = 'gameMenu';                                  // string
         self.imageUrl = alienInvasion.config['imageUrl'];               // url
         self.splashScreenOptions = {                                    // json: splashscreenOptions    
             'assetId'           :   'splashScreen',                     // string
@@ -65,22 +65,22 @@
         self.addEventSubscriptions = function(){
         // FUNCTION: addEventSubscriptions( void ) void
             
-            // subscribe to layoutChange
-            jsProject.subscribeToEvent( 'addGameStates', self.addGameState );
+            // subscribe to add scenes
+            jsProject.subscribeToEvent( 'addScenes', self.addScene );
             
         // DONE FUNCTION: addEventSubscriptions( void ) void
         };
-        self.addGameState = function( game ){
-        // FUNCTION: addGameState( Phaser.game: game ) void
+        self.addScene = function( game ){
+        // FUNCTION: addScene( Phaser.game: game ) void
             
             // debug info
-            self.debug( 'addGameState' );
+            self.debug( 'addScene' );
             
             // remember game
             self.game = game;
 
-            // add state to game
-            self.game.state.add( self.gameStateId, self );
+            // add scene to game
+            self.game.state.add( self.sceneId, self );
             
             // loop over modules
             for( var i = 0; i < self.modules.length; i++ ){
@@ -89,7 +89,7 @@
             }
             // done loop over modules
             
-        // DONE FUNCTION: addGameState( Phaser.game: game ) void
+        // DONE FUNCTION: addScene( Phaser.game: game ) void
         };
         self.preload = function(  ){
         // FUNCTION: preload( void ) void
@@ -124,8 +124,8 @@
             
             // ! show splash screen
             if( !alienInvasion.config['splashscreenShow'] ){
-                // start gameIntro state
-                self.game.state.start( self.nextGameStateId );
+                // start next scene
+                self.game.state.start( self.nextSceneId );
                 // done 
                 return;
             }
@@ -218,8 +218,8 @@
                                 
                         // set closed
                     self.closed = true;
-                    // start gameIntro state
-                    self.game.state.start( self.nextGameStateId );
+                    // start next scene
+                    self.game.state.start( self.nextSceneId );
                 }
                 // delay > splashScreen delay
 

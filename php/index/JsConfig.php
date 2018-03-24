@@ -21,6 +21,7 @@ class JsConfig extends CommonBaseClass {
     // members
     private $configDir = '/../../config/';
     private $configFileName = 'jsConfig.json';
+    private $colorsFileName = 'jsColors.json';
     private $debugConfigFileName = 'jsDebug.json';
     // members
 
@@ -49,6 +50,24 @@ class JsConfig extends CommonBaseClass {
 
         // debug
         $this->log( 'js config not found, file: ' . $dirFileName, E_ERROR );
+        
+        // return empty
+        return null;
+    }
+    public function getColors( ) {
+        
+        // get file name
+        $dirFileName = $this->configDir . $this->colorsFileName;
+        
+        // file exists
+        if( is_file( $dirFileName ) ){
+            // read config
+            return file_get_contents( $dirFileName ); 
+        }
+        // file exists
+        
+        // debug
+        $this->log( 'js colors not found, file: ' . $dirFileName, E_ERROR );
         
         // return empty
         return null;

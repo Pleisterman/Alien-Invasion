@@ -1,0 +1,16 @@
+{
+    "id"                    :   "000AlienInvasion",
+    "title"                 :   "Alien Invasion",
+    "subTitle"              :   "Enter the force.",
+    "description"           :   [ 
+        "Start your journey into our academy,",
+        "and meet the enemy."
+    ],
+    "background"            :   "missionBackground.png",
+    "useMissionImages"      :   [
+        "background",
+        "attributes",
+        "tokens"
+    ],
+    "lives"                 :   3
+}

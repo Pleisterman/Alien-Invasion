@@ -31,6 +31,8 @@ if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 use PleistermanAlienInvaders\Common\Common;
 use PleistermanAlienInvaders\Common\DeviceDetector;
 use PleistermanAlienInvaders\Index\JsConfig;
+use PleistermanAlienInvaders\Index\Missions;
+use PleistermanAlienInvaders\Index\About;
 use PleistermanAlienInvaders\Language\Translator;
        
 // application files
@@ -46,6 +48,13 @@ $applicationFiles = array(
     './js/game/audioModule.js',
     './js/game/commonAssetsModule.js',
     './js/game/scenes/common/gameAudioButtonModule.js',
+    './js/game/scenes/common/fullScreenButtonModule.js',
+    './js/game/scenes/common/backToMenuButtonModule.js',
+    './js/game/scenes/common/listScrollAnimationModule.js',
+    './js/game/scenes/common/listItemImageModule.js',
+    './js/game/scenes/common/listItemTextModule.js',
+    './js/game/scenes/common/listItemLinkModule.js',
+    './js/game/scenes/common/sliderPanelModule.js',
     './js/game/scenes/splashScreen/splashScreenModule.js',
     './js/game/scenes/splashScreen/splashScreenAudioModule.js',
     './js/game/scenes/gameMenu/gameMenuModule.js',
@@ -53,7 +62,26 @@ $applicationFiles = array(
     './js/game/scenes/gameMenu/gameMenuBackgroundModule.js',
     './js/game/scenes/gameMenu/gameMenuContentModule.js',
     './js/game/scenes/gameMenu/gameMenuButtonsModule.js',
-    './js/game/scenes/gameMenu/gameMenuForegroundModule.js'
+    './js/game/scenes/gameMenu/gameMenuForegroundModule.js',
+    './js/game/scenes/options/optionsModule.js',
+    './js/game/scenes/options/optionsAudioModule.js',
+    './js/game/scenes/options/optionsBackgroundModule.js',
+    './js/game/scenes/options/optionsContentModule.js',
+    './js/game/scenes/options/optionsAudioPanel.js',
+    './js/game/scenes/options/optionsForegroundModule.js',
+    './js/game/scenes/about/aboutModule.js',
+    './js/game/scenes/about/aboutAudioModule.js',
+    './js/game/scenes/about/aboutBackgroundModule.js',
+    './js/game/scenes/about/aboutContentModule.js',
+    './js/game/scenes/about/aboutListModule.js',
+    './js/game/scenes/about/aboutForegroundModule.js',
+    './js/game/scenes/highScores/highScoresModule.js',
+    './js/game/scenes/highScores/highScoresAudioModule.js',
+    './js/game/scenes/highScores/highScoresBackgroundModule.js',
+    './js/game/scenes/highScores/highScoresContentModule.js',
+    './js/game/scenes/highScores/highScoresListModule.js',
+    './js/game/scenes/highScores/highScoresListItemModule.js',
+    './js/game/scenes/highScores/highScoresForegroundModule.js'
 );
 // application files
 
@@ -132,15 +160,33 @@ if( $deviceDetector->isMobile() ){
 
 // create js config
 $jsConfig = new JsConfig( $common );
+// create missions
+$missions = new Missions( $common );
+// create about
+$about = new About( $common );
 
 // create session
 $translator = new Translator( $common );
 // get languages
 $languages = $translator->getLanguages();
 // get defaut language
-$defaultLanguage = $common->getSetting( 'defaultLanguage' );
+$language = $common->getSetting( 'defaultLanguage' );
+
+// get language exists
+if( isset( $_GET['lang'] ) ){
+        
+    // get language in existing languages
+    if( in_array( $_GET['lang'], $languages ) ){
+        // set language
+        $language = $_GET['lang'];
+    }
+    // get language in existing languages
+    
+}
+// get language exists
+
 // get transaltions
-$translations = $translator->getTranslations( $defaultLanguage );
+$translations = $translator->getTranslations( $language );
 
 ?>
 
@@ -258,6 +304,9 @@ $translations = $translator->getTranslations( $defaultLanguage );
 // add js config
 echo 'alienInvasion.config=' . $jsConfig->getConfig() . ';' . PHP_EOL; 
 
+// add js colors
+echo 'alienInvasion.colors=' . $jsConfig->getColors() . ';' . PHP_EOL; 
+
 // add js debug
 echo 'alienInvasion.debug=' . $jsConfig->getDebugConfig() . ';' . PHP_EOL; 
 
@@ -265,13 +314,19 @@ echo 'alienInvasion.debug=' . $jsConfig->getDebugConfig() . ';' . PHP_EOL;
 echo 'alienInvasion.languages=' . json_encode( $languages ) . ';' . PHP_EOL; 
 
 // add language
-echo 'alienInvasion.language="' . $defaultLanguage . '";' . PHP_EOL;
+echo 'alienInvasion.language="' . $language . '";' . PHP_EOL;
 
 // add translations
 echo 'alienInvasion.translations=' . json_encode( $translations ) . ';' . PHP_EOL;
 
 // add is mobile
 echo 'alienInvasion.isMobile=' . $isMobile . ';' . PHP_EOL;
+
+// add missions
+echo 'alienInvasion.missions=' . $missions->getMissions() . ';' . PHP_EOL; 
+
+// add about
+echo 'alienInvasion.about=' . $about->getAbout() . ';' . PHP_EOL; 
 
 
 ?>

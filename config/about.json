@@ -1,0 +1,230 @@
+[
+    {
+        "type": "text",
+        "marginTop"     :   80,
+        "align"         :   "center",
+        "color"         :   "#dddd00",
+        "text"          :  {
+            "en"        :   "Alien Invasion is created by Rob Wolters.",
+            "nl"        :   "Alien Invasion is gemaakt door Rob Wolters."
+        }
+    },
+    {
+        "type"          :   "link",
+        "align"         :   "center",
+        "marginTop"     :   40,
+        "link"          :  {
+            "nl"        :   "https://pleisterman.nl/",
+            "en"        :   "https://pleisterman.nl/en/"
+        },
+        "text"          :  {
+            "en"        :   "Visit my website.",
+            "nl"        :   "Open mijn website."
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   80,
+        "color"         :   "#dddd00",
+        "text"          :  {
+            "en"        :   "Creating Alien Invasion would not have been possible without ",
+            "nl"        :   "Het maken van Alien Invasion zou onmogelijk zijn geweest zonder"
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   20,
+        "color"         :   "#dddd00",
+        "text"          :  {
+            "en"        :   "all the tools and resources I found on the internet. ",
+            "nl"        :   "alle middelen die ik op het internet gevonder heb. "
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   20,
+        "color"         :   "#dddd00",
+        "text"          :  {
+            "en"        :   "I am very greatfull for all the good work that you have done.",
+            "nl"        :   "Ik ben heel dankbaar voor alle goede werk dat jullie gedaan hebben."
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   50,
+        "color"         :   "#dddd00",
+        "text"          :  {
+            "en"        :   "I hope you can enjoy what I have done with them.",
+            "nl"        :   "Ik hoop dat jullie kunnen genieten van wat ik ermee gecreëerd heb."
+        }
+    },
+    {
+        "id"            :   "phaserImage",
+        "align"         :   "center",
+        "type"          :   "image",
+        "marginTop"     :   80,
+        "fileName"      :   "phaserLogo.png",
+        "width"         :   240,
+        "height"        :   208
+    },
+    {
+        "type"          :   "link",
+        "align"         :   "center",
+        "marginTop"     :   40,
+        "link"          :  {
+            "en"        :   "https://phaser.io",
+            "nl"        :   "https://phaser.io"
+        },
+        "text"          :  {
+            "en"        :   "Visit website.",
+            "nl"        :   "Open website."
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   30,
+        "text"          :  {
+            "en"        :   "A fast, free and fun Open Source framework for canvas and webGL powered browser games.",
+            "nl"        :   "Een snel, gratis en leuk Open Source framework voor canvas en webGL gedreven browser spelletjes."
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   60,
+        "wordwrap"      :   false,
+        "text"          :  {
+            "en"        :   "OpenMPT",
+            "nl"        :   "OpenMPT"
+        }
+    },
+    {
+        "id"            :   "openMPTImage",
+        "type"          :   "image",
+        "align"         :   "center",
+        "marginTop"     :   40,
+        "fileName"      :   "openMpt.jpg",
+        "width"         :   276,
+        "height"        :   182
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   30,
+        "text"          :  {
+            "en"        :   "OpenMPT is a powerful audio application that makes writing music fun, easy and efficient.",
+            "nl"        :   "OpenMPT is een krachtige audio applicatie die het maken van muziek leuk, makkelijk en efficiÃ«nt maakt."
+        }
+    },
+    {
+        "id"            :   "jQueryImage",
+        "type"          :   "image",
+        "align"         :   "center",
+        "marginTop"     :   80,
+        "fileName"      :   "jqueryLogo.png",
+        "width"         :   216,
+        "height"        :   52
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   30,
+        "text"          :  {
+            "en"        :   "JQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.",
+            "nl"        :   "JQuery is een snelle, kleine en eigenschaprijke JavaScript-bibliotheek. Het maakt dingen zoals HTML-documentverloop en -manipulatie, gebeurtenishantering, animatie en Ajax veel eenvoudiger met een makkelijk te gebruiken API die over meerdere browsers werkt. Met een combinatie van veelzijdigheid en extensibility, heeft jQuery de manier veranderd dat miljoenen mensen JavaScript schrijven."
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   60,
+        "wordwrap"      :   false,
+        "text"          :  {
+            "en"        :   "Galaxy and Planet",
+            "nl"        :   "Galaxy and Planet"
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   40,
+        "text"          :  {
+            "en"        :   "Images, Lyshastra: Digital Art / Drawings & Paintings / Space ArtÂ©2014-2017 Lyshastra.",
+            "nl"        :   "Afbeeldingen, Lyshastra: Digital Art / Drawings & Paintings / Space ArtÂ©2014-2017 Lyshastra."
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   60,
+        "wordwrap"      :   false,
+        "text"          :  {
+            "en"        :   "PixaBay",
+            "nl"        :   "PixaBay"
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   40,
+        "text"          :  {
+            "en"        :   "Images, pixabay.com.",
+            "nl"        :   "Afbeeldingen, pixabay.com."
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   80,
+        "color"         :   "#dddd00",
+        "text"          :  {
+            "en"        :   "Do you want to contribute to the development of Alien Invasion?",
+            "nl"        :   "Wil jij meewerken aan Alien Invasion?"
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   80,
+        "color"         :   "#00dd00",
+        "text"          :  {
+            "en"        :   "I am looking for sound files and pictures of backgrounds, ships, enemies, artifacts and bullets that I can use in the game.",
+            "nl"        :   "Ik zoek nog naar geluiden en plaatjes van achtergronden, schepen, aliens, objecten en kogels die ik kan gebruiken in het spel."
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   80,
+        "color"         :   "#00dd00",
+        "text"          :  {
+            "en"        :   "Would you want to create your own level? Alien Invasion is based on Json files that can be easily adapted so you could create a mission or level.",
+            "nl"        :   "Wil je zelf een level ontwerpen? Alien invasion is gebaseerd op json files die makkelijk aangepast kunnen worden waardoor een missie of level gemakkelijk gedefinieerd kan worden. "
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   80,
+        "color"         :   "#dddd00",
+        "text"          :  {
+            "en"        :   "If you contribute you will be included in the credits page.",
+            "nl"        :   "Als je bijdraagt wordt je opgenomen in de credit pagina"
+        }
+    },
+    {
+        "type"          :   "text",
+        "align"         :   "center",
+        "marginTop"     :   80,
+        "color"         :   "#dddd00",
+        "text"          :  {
+            "en"        :   "If you would like to contribute send a mail to info@pleisterman.nl",
+            "nl"        :   "Als je wil bijdragen stuur dan een mail naar info@pleisterman.nl"
+        }
+    }
+]

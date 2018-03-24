@@ -6,7 +6,7 @@
  *  Last Revision:  10-03-2018
  * 
  *  Purpose:  
- *      handles the buttons for the gameState: gameMenu
+ *      handles the buttons for the scene: gameMenu
  *      
 */
 
@@ -41,7 +41,8 @@
             'horizontalSpacing'     :   30,                             // integer: px                                               
             'maximumWidth'          :   400,                            // integer: px height
             'height'                :   38,                             // integer: px height
-            'style'             :   {
+            'group'                 :   null,                           // phaser.Group
+            'style'                 :   {
                 font: alienInvasion.config['fontSize'] + "px " + alienInvasion.config['font'], 
                 fill: "#fff", 
                 align: "center"
@@ -54,7 +55,7 @@
                 'phaserObject'      :   null,
                 'phaserTextObject'  :   null,
                 'translation'       :   alienInvasion.translations['options'],
-                'gameState'         :   'options'
+                'sceneId'           :   'options'
             },
             {
                 'id'                :   'highScores',
@@ -62,7 +63,7 @@
                 'phaserObject'      :   null,
                 'phaserTextObject'  :   null,
                 'translation'       :   alienInvasion.translations['highScores'],
-                'gameState'         :   'highScores'
+                'sceneId'           :   'highScores'
             },
             {
                 'id'                :   'about',
@@ -70,12 +71,12 @@
                 'phaserObject'      :   null,
                 'phaserTextObject'  :   null,
                 'translation'       :   alienInvasion.translations['about'],
-                'gameState'         :   'about'
+                'sceneId'           :   'about'
             }
         ];                                                              // done json: buttons                                          
         self.changeOrientationMessage = {                               // json: changeOrientationMessage
             'phaserObject'      :   null,
-            'translation'       :   alienInvasion.translations['changeOrientationMessage'],                
+            'translation'       :   alienInvasion.translations['changeOrientationMessageMenu'],                
             'style'             :   {
                 font: alienInvasion.config['fontSize'] + "px " + alienInvasion.config['font'], 
                 fill: "#fff", 
@@ -149,13 +150,20 @@
                 
                 // set anchor
                 self.changeOrientationMessage['phaserObject'].anchor.set( 0.5, 0.5 );
+                
             }            
             // is mobile
+                       
+            // create group
+            self.buttonOptions['group'] = self.game.add.group( );            
             
             // loop over buttons
             for( var i = 0; i < self.buttons.length; i++ ){
                 // create sprite
                 self.buttons[i]['phaserObject'] = self.game.add.sprite( -100, -100, self.buttons[i]['assetId'] );   
+                // add sprite to group
+                self.buttonOptions['group'].add( self.buttons[i]['phaserObject'] );
+                
                 // enable events
                 self.buttons[i]['phaserObject'].inputEnabled = true;
                 // use hand cursor
@@ -173,7 +181,7 @@
                 // set out event
                 self.buttons[i]['phaserObject'].events.onInputOut.add( self.inputOut, self );
                 
-                // set gameState data
+                // set data
                 self.buttons[i]['phaserObject']['data']['index'] = i;  
                 // add event handler
                 self.buttons[i]['phaserObject'].events.onInputDown.add( function( sprite ){ self.click( sprite ); });
@@ -185,6 +193,8 @@
                                 
                 // add button text
                 self.buttons[i]['phaserTextObject'] = self.game.add.text( -100, -100, text, self.buttonOptions['style'] );
+                // add text to group
+                self.buttonOptions['group'].add( self.buttons[i]['phaserTextObject'] );
                 // set anchor
                 self.buttons[i]['phaserTextObject'].anchor.set( 0.5, 0.4 );
                 
@@ -193,32 +203,6 @@
             
             // adjust layout
             self.layoutChange( );
-
-            // loop over buttons
-            for( var i = 0; i < self.buttons.length; i++ ){
-            
-                // is landscape and mobile / else
-                if( window.innerWidth > window.innerHeight && alienInvasion.isMobile ){
-                    // set button alpha
-                    self.buttons[i]['phaserObject'].alpha = 0;
-                    // set text alpha
-                    self.buttons[i]['phaserTextObject'].alpha = 0;
-                }
-                else {
-                    // set alpha
-                    self.buttons[i]['phaserObject'].alpha = 0;
-                    // add tween
-                    self.game.add.tween( self.buttons[i]['phaserObject'] ).to( { alpha: 1 }, 
-                                         alienInvasion.config['sceneShowTransitionPeriod'], 
-                                         Phaser.Easing.Linear.In, 
-                                         true );
-                    
-                }
-                // is landscape and mobile / else
-                
-            }
-            // done loop over buttons
-            
             
             // event subscription
             self.addEventSubscriptions();
@@ -264,7 +248,7 @@
         // DONE FUNCTION: inputOut( void ) void
         };
         self.click = function( sprite ) {
-        // FUNCTION: click( string: gameState ) void
+        // FUNCTION: click( phaser.Sprite: sprite ) void
                         
             // debug info
             self.debug( 'click index: ' + sprite.data.index );
@@ -281,10 +265,10 @@
             // set frame selected
             self.buttons[self.selectedButtonIndex]['phaserObject'].frame = 2;
                 
-            // start game state
-            //self.game.state.start( self.buttons[sprite.data.index]['gameState'] );
+            // start scene
+            self.game.state.start( self.buttons[sprite.data.index]['sceneId'] );
             
-        // DONE FUNCTION: click( string: gameState ) void
+        // DONE FUNCTION: click( phaser.Sprite: sprite ) void
         };
         self.update = function( ){
         // FUNCTION: update( void ) void
@@ -294,30 +278,25 @@
         self.layoutChange = function( ) {
         // FUNCTION: layoutChange( void ) void
 
+            // set alpha
+            self.buttonOptions['group'].alpha = 0;
+            
             // is landscape and mobile / else
             if( window.innerWidth > window.innerHeight && alienInvasion.isMobile ){
                 // show change orientation message
                 self.showChangeOrientationMessage();
             }
             else {
-                // show vertical layout
-                self.showVerticalLayout();
+                // show 
+                self.show();
             }
             // is landscape and mobile/ else
-            
-            
+                        
         // DONE FUNCTION: layoutChange( void ) void
         };
-        self.showVerticalLayout = function( ){
-        // FUNCTION: showVerticalLayout( void ) void
+        self.show = function( ){
+        // FUNCTION: show( void ) void
 
-            // is mobile
-            if( alienInvasion.isMobile ){
-                // hide orientation change message
-                self.changeOrientationMessage['phaserObject'].alpha = 0;
-            }
-            // is mobile
-            
             // calculate available height
             var availableHeight = self.game.world.height;
             // subtract titel
@@ -369,11 +348,6 @@
                 // set text top                
                 self.buttons[i]['phaserTextObject'].y = textTop;
                 
-                // show button
-                self.buttons[i]['phaserObject'].alpha = 1;
-                // show button
-                self.buttons[i]['phaserTextObject'].alpha = 1;
-                
                 // add button height        
                 buttonTop += self.buttonOptions['height'];
                 // add button spacing        
@@ -385,29 +359,50 @@
             }
             // done loop over buttons
             
-        // DONE FUNCTION: showVerticalLayout( void ) void
+            // is mobile
+            if( alienInvasion.isMobile ){
+                // hide orientation change message
+                self.changeOrientationMessage['phaserObject'].alpha = 0;
+                // add tween
+                self.game.add.tween( self.changeOrientationMessage['phaserObject'] ).to( { alpha: 0 }, 
+                                     alienInvasion.config['sceneShowTransitionPeriod'], 
+                                     Phaser.Easing.Linear.In, 
+                                     true );
+            }
+            // is mobile
+            
+            // add tween
+            self.game.add.tween( self.buttonOptions['group'] ).to( { alpha: 1 }, 
+                                 alienInvasion.config['sceneShowTransitionPeriod'], 
+                                 Phaser.Easing.Linear.In, 
+                                 true );
+                                     
+        // DONE FUNCTION: show( void ) void
         };
         self.showChangeOrientationMessage = function( ){
         // FUNCTION: showChangeOrientationMessage( void ) void
         
-            // loop over buttons
-            for( var i = 0; i < self.buttons.length; i++ ){
-                
-                // hide button
-                self.buttons[i]['phaserObject'].alpha = 0;
-                // hide button
-                self.buttons[i]['phaserTextObject'].alpha = 0;
-                
-            }
-            // done loop over buttons
+            // hide buttons
+            self.buttonOptions['group'].alpha = 0;
             
             // set left
             self.changeOrientationMessage['phaserObject'].x = self.game.world.width / 2;
             // set top
             self.changeOrientationMessage['phaserObject'].y = self.game.world.height / 2;
             
-            // show orientation change message
-            self.changeOrientationMessage['phaserObject'].alpha = 1;
+            // set alpha
+            self.changeOrientationMessage['phaserObject'].alpha = 0;
+            // add tween
+            self.game.add.tween( self.changeOrientationMessage['phaserObject'] ).to( { alpha: 1 }, 
+                                 alienInvasion.config['sceneShowTransitionPeriod'], 
+                                 Phaser.Easing.Linear.In, 
+                                 true );
+            // add tween
+            self.game.add.tween( self.buttonOptions['group'] ).to( { alpha: 0 }, 
+                                 alienInvasion.config['sceneShowTransitionPeriod'], 
+                                 Phaser.Easing.Linear.In, 
+                                 true );
+                                     
             
         // DONE FUNCTION: showChangeOrientationMessage( void ) void
         };
@@ -419,8 +414,8 @@
                 
                 // play menu audio effect
                 self.audio.playEffect( self.selectAudioEffectId );
-                // start game state
-                self.game.state.start( self.buttons[self.selectedButtonIndex]['gameState'] );
+                // start scene
+                self.game.state.start( self.buttons[self.selectedButtonIndex]['sceneId'] );
                 
             }
             // spacebar pressed
@@ -479,21 +474,22 @@
             // remove event subscriptions
             self.removeEventSubscriptions();
 
-            // loop over buttons
-            for( var i = 0; i < self.buttons.length; i++ ){
+            // destroy sprites
+            self.buttonOptions['group'].removeAll( true );
+            // destroy group
+            self.buttonOptions['group'].destroy();
+            // unset group
+            self.buttonOptions['group'] = null;
                 
-                // destroy phaserObject
-                self.buttons[i]['phaserObject'].destroy();
-                // unset phaserObject
-                self.buttons[i]['phaserObject'] = null;
-                // destroy phaserTextObject
-                self.buttons[i]['phaserTextObject'].destroy();
-                // unset phaserTextObject
-                self.buttons[i]['phaserTextObject'] = null;
-                
+            // is mobile
+            if( alienInvasion.isMobile ){
+                // destroy change orientation message
+                self.changeOrientationMessage['phaserObject'].destroy( );
+                // unset change orientation message
+                self.changeOrientationMessage['phaserObject'] = null;
             }
-            // done loop over buttons
-
+            // is mobile
+            
             // destroy asset
             alienInvasion.destroyAsset( self.buttonAssetOptions ); 
             

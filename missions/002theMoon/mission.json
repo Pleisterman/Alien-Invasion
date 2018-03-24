@@ -1,0 +1,14 @@
+{
+    "id"                    :   "002theMoon",
+    "title"                 :   "The Moon.",
+    "subTitle"              :   "Step into space.",
+    "description"           :   [ 
+        "Start your journey into our academy,",
+        "to explore new worlds."
+    ],
+    "background"            :   "missionBackground.png",
+    "useMissionImages"      :   [
+        "background"
+    ],
+    "lives"                 :   3   
+}

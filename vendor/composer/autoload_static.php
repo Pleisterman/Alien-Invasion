@@ -26,7 +26,9 @@ class ComposerStaticInitccec348298ce7056c3a01a559b570dba
         'PleistermanAlienInvaders\\Common\\DeviceDetector' => __DIR__ . '/../..' . '/php/common/DeviceDetector.php',
         'PleistermanAlienInvaders\\Common\\MobileDetect' => __DIR__ . '/../..' . '/php/common/MobileDetect.php',
         'PleistermanAlienInvaders\\Debug\\Debugger' => __DIR__ . '/../..' . '/php/debug/Debugger.php',
+        'PleistermanAlienInvaders\\Index\\About' => __DIR__ . '/../..' . '/php/index/About.php',
         'PleistermanAlienInvaders\\Index\\JsConfig' => __DIR__ . '/../..' . '/php/index/JsConfig.php',
+        'PleistermanAlienInvaders\\Index\\Missions' => __DIR__ . '/../..' . '/php/index/Missions.php',
         'PleistermanAlienInvaders\\Language\\Translator' => __DIR__ . '/../..' . '/php/language/Translator.php',
     );
 

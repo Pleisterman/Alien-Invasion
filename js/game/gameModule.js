@@ -39,7 +39,22 @@
                 'id'            :   'menu',
                 'MODULE'        :   alienInvasion.gameMenuModule,
                 'moduleObject'  :   null
-            }                                                           // done json: menu
+            },                                                           // done json: splashScreen
+            {                                                           // json: options
+                'id'            :   'options',
+                'MODULE'        :   alienInvasion.optionsModule,
+                'moduleObject'  :   null
+            },                                                           // done json: options
+            {                                                           // json: about
+                'id'            :   'about',
+                'MODULE'        :   alienInvasion.aboutModule,
+                'moduleObject'  :   null
+            },                                                          // done json: about
+            {                                                           // json: highScores
+                'id'            :   'highScores',
+                'MODULE'        :   alienInvasion.highScoresModule,
+                'moduleObject'  :   null
+            }                                                           // done json: highScores
         ];                                                              // done json: modules
         self.visible = false;                                           // boolean: visible                                                            
         // DONE MEMBERS
@@ -99,7 +114,6 @@
                                              update     : self.update   
                                          });
                                          
-                                         
             // create audio module
             self.audio = new alienInvasion.audioModule( self.game );
 
@@ -130,8 +144,8 @@
             // set visibility
             self.visible = true;
 
-            // add states
-            jsProject.callEvent( 'addGameStates', self.game );
+            // add scenes
+            jsProject.callEvent( 'addScenes', self.game );
             // start the splash screen
             self.game.state.start( 'splashScreen' );
             

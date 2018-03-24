@@ -1,0 +1,16 @@
+{
+    "id"                    :   "001earth",
+    "title"                 :   "Earth.",
+    "subTitle"              :   "Defend our Home.",
+    "description"           :   [ 
+        "Start your journey into our academy,",
+        "to explore new worlds."
+    ],
+    "background"            :   "missionBackground.png",
+    "useMissionImages"      :   [
+        "background",
+        "attributes",
+        "tokens"
+    ],
+    "lives"                 :   3
+}

@@ -11,6 +11,8 @@ return array(
     'PleistermanAlienInvaders\\Common\\DeviceDetector' => $baseDir . '/php/common/DeviceDetector.php',
     'PleistermanAlienInvaders\\Common\\MobileDetect' => $baseDir . '/php/common/MobileDetect.php',
     'PleistermanAlienInvaders\\Debug\\Debugger' => $baseDir . '/php/debug/Debugger.php',
+    'PleistermanAlienInvaders\\Index\\About' => $baseDir . '/php/index/About.php',
     'PleistermanAlienInvaders\\Index\\JsConfig' => $baseDir . '/php/index/JsConfig.php',
+    'PleistermanAlienInvaders\\Index\\Missions' => $baseDir . '/php/index/Missions.php',
     'PleistermanAlienInvaders\\Language\\Translator' => $baseDir . '/php/language/Translator.php',
 );

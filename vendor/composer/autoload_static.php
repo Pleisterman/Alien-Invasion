@@ -9,27 +9,27 @@ class ComposerStaticInitccec348298ce7056c3a01a559b570dba
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
-            'PleistermanAlienInvaders\\' => 25,
+            'PleistermanAlienInvasion\\' => 25,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PleistermanAlienInvaders\\' => 
+        'PleistermanAlienInvasion\\' => 
         array (
             0 => __DIR__ . '/../..' . '/php',
         ),
     );
 
     public static $classMap = array (
-        'PleistermanAlienInvaders\\Common\\Common' => __DIR__ . '/../..' . '/php/common/Common.php',
-        'PleistermanAlienInvaders\\Common\\CommonBaseClass' => __DIR__ . '/../..' . '/php/common/CommonBaseClass.php',
-        'PleistermanAlienInvaders\\Common\\DeviceDetector' => __DIR__ . '/../..' . '/php/common/DeviceDetector.php',
-        'PleistermanAlienInvaders\\Common\\MobileDetect' => __DIR__ . '/../..' . '/php/common/MobileDetect.php',
-        'PleistermanAlienInvaders\\Debug\\Debugger' => __DIR__ . '/../..' . '/php/debug/Debugger.php',
-        'PleistermanAlienInvaders\\Index\\About' => __DIR__ . '/../..' . '/php/index/About.php',
-        'PleistermanAlienInvaders\\Index\\JsConfig' => __DIR__ . '/../..' . '/php/index/JsConfig.php',
-        'PleistermanAlienInvaders\\Index\\Missions' => __DIR__ . '/../..' . '/php/index/Missions.php',
-        'PleistermanAlienInvaders\\Language\\Translator' => __DIR__ . '/../..' . '/php/language/Translator.php',
+        'PleistermanAlienInvasion\\Common\\Common' => __DIR__ . '/../..' . '/php/common/Common.php',
+        'PleistermanAlienInvasion\\Common\\CommonBaseClass' => __DIR__ . '/../..' . '/php/common/CommonBaseClass.php',
+        'PleistermanAlienInvasion\\Common\\DeviceDetector' => __DIR__ . '/../..' . '/php/common/DeviceDetector.php',
+        'PleistermanAlienInvasion\\Common\\MobileDetect' => __DIR__ . '/../..' . '/php/common/MobileDetect.php',
+        'PleistermanAlienInvasion\\Debug\\Debugger' => __DIR__ . '/../..' . '/php/debug/Debugger.php',
+        'PleistermanAlienInvasion\\Index\\About' => __DIR__ . '/../..' . '/php/index/About.php',
+        'PleistermanAlienInvasion\\Index\\JsConfig' => __DIR__ . '/../..' . '/php/index/JsConfig.php',
+        'PleistermanAlienInvasion\\Index\\Missions' => __DIR__ . '/../..' . '/php/index/Missions.php',
+        'PleistermanAlienInvasion\\Language\\Translator' => __DIR__ . '/../..' . '/php/language/Translator.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

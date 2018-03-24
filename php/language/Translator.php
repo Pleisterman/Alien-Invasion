@@ -11,9 +11,9 @@
  * 
  */
 
-namespace PleistermanAlienInvaders\Language;
+namespace PleistermanAlienInvasion\Language;
 
-use PleistermanAlienInvaders\Common\CommonBaseClass;
+use PleistermanAlienInvasion\Common\CommonBaseClass;
 
 class Translator extends CommonBaseClass {
     

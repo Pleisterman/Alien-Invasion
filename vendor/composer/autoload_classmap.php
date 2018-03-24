@@ -6,13 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'PleistermanAlienInvaders\\Common\\Common' => $baseDir . '/php/common/Common.php',
-    'PleistermanAlienInvaders\\Common\\CommonBaseClass' => $baseDir . '/php/common/CommonBaseClass.php',
-    'PleistermanAlienInvaders\\Common\\DeviceDetector' => $baseDir . '/php/common/DeviceDetector.php',
-    'PleistermanAlienInvaders\\Common\\MobileDetect' => $baseDir . '/php/common/MobileDetect.php',
-    'PleistermanAlienInvaders\\Debug\\Debugger' => $baseDir . '/php/debug/Debugger.php',
-    'PleistermanAlienInvaders\\Index\\About' => $baseDir . '/php/index/About.php',
-    'PleistermanAlienInvaders\\Index\\JsConfig' => $baseDir . '/php/index/JsConfig.php',
-    'PleistermanAlienInvaders\\Index\\Missions' => $baseDir . '/php/index/Missions.php',
-    'PleistermanAlienInvaders\\Language\\Translator' => $baseDir . '/php/language/Translator.php',
+    'PleistermanAlienInvasion\\Common\\Common' => $baseDir . '/php/common/Common.php',
+    'PleistermanAlienInvasion\\Common\\CommonBaseClass' => $baseDir . '/php/common/CommonBaseClass.php',
+    'PleistermanAlienInvasion\\Common\\DeviceDetector' => $baseDir . '/php/common/DeviceDetector.php',
+    'PleistermanAlienInvasion\\Common\\MobileDetect' => $baseDir . '/php/common/MobileDetect.php',
+    'PleistermanAlienInvasion\\Debug\\Debugger' => $baseDir . '/php/debug/Debugger.php',
+    'PleistermanAlienInvasion\\Index\\About' => $baseDir . '/php/index/About.php',
+    'PleistermanAlienInvasion\\Index\\JsConfig' => $baseDir . '/php/index/JsConfig.php',
+    'PleistermanAlienInvasion\\Index\\Missions' => $baseDir . '/php/index/Missions.php',
+    'PleistermanAlienInvasion\\Language\\Translator' => $baseDir . '/php/language/Translator.php',
 );

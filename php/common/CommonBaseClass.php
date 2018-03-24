@@ -11,9 +11,9 @@
  * 
  */
 
-namespace PleistermanAlienInvaders\Common;
+namespace PleistermanAlienInvasion\Common;
 
-use PleistermanAlienInvaders\Common\Common;
+use PleistermanAlienInvasion\Common\Common;
 
 class CommonBaseClass {
     

@@ -19,7 +19,7 @@
  *                      
  */
 
-namespace PleistermanAlienInvaders\Debug;
+namespace PleistermanAlienInvasion\Debug;
 
 class Debugger {
     

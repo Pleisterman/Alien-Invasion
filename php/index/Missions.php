@@ -11,9 +11,9 @@
  * 
  */
 
-namespace PleistermanAlienInvaders\Index;
+namespace PleistermanAlienInvasion\Index;
 
-use PleistermanAlienInvaders\Common\CommonBaseClass;
+use PleistermanAlienInvasion\Common\CommonBaseClass;
 
 class Missions extends CommonBaseClass {
     

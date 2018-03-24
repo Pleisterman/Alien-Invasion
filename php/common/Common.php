@@ -11,10 +11,10 @@
  * 
  */
 
-namespace PleistermanAlienInvaders\Common;
+namespace PleistermanAlienInvasion\Common;
 
-use PleistermanAlienInvaders\Debug\Debugger;
-use PleistermanAlienInvaders\Database\MySqlDataController;
+use PleistermanAlienInvasion\Debug\Debugger;
+use PleistermanAlienInvasion\Database\MySqlDataController;
 
 class Common {
     

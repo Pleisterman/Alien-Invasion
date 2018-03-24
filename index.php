@@ -28,12 +28,12 @@ if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 }
 // autoloader exists
 
-use PleistermanAlienInvaders\Common\Common;
-use PleistermanAlienInvaders\Common\DeviceDetector;
-use PleistermanAlienInvaders\Index\JsConfig;
-use PleistermanAlienInvaders\Index\Missions;
-use PleistermanAlienInvaders\Index\About;
-use PleistermanAlienInvaders\Language\Translator;
+use PleistermanAlienInvasion\Common\Common;
+use PleistermanAlienInvasion\Common\DeviceDetector;
+use PleistermanAlienInvasion\Index\JsConfig;
+use PleistermanAlienInvasion\Index\Missions;
+use PleistermanAlienInvasion\Index\About;
+use PleistermanAlienInvasion\Language\Translator;
        
 // application files
 $applicationFiles = array(

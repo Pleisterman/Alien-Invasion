@@ -36,7 +36,7 @@
  * @version     2.8.12
  */
 
-namespace PleistermanAlienInvaders\Common;
+namespace PleistermanAlienInvasion\Common;
 
 class MobileDetect
 {

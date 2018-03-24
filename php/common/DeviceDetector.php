@@ -11,10 +11,10 @@
  * 
  */
 
-namespace PleistermanAlienInvaders\Common;
+namespace PleistermanAlienInvasion\Common;
 
-use PleistermanAlienInvaders\Common\CommonBaseClass;
-use PleistermanAlienInvaders\Common\MobileDetect;
+use PleistermanAlienInvasion\Common\CommonBaseClass;
+use PleistermanAlienInvasion\Common\MobileDetect;
 
 class DeviceDetector extends CommonBaseClass {
 
